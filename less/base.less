@@ -1,0 +1,84 @@
+/*
+* @Author: LvZijie
+* @Date:   2017-12-20 19:47:37
+* @Last Modified by:   LvZijie
+* @Last Modified time: 2016-06-16 19:47:37
+*/
+@main-color:#f23030;
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  /*设置点击高亮效果设置透明则可以达到去除高亮*/
+  -webkit-tap-highlight-color: transparent !important;
+  //移动端口不允许出现横向滚动条的不能让padding或者border撑开开盒子
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: "MicroSoft YaHei", sans-serif;
+  /* 备用默认字体 */
+  color: #333;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  color: #333;
+}
+
+input {
+  border: none;
+  outline: none;
+  /* 移动端清除浏览器默认样式 */
+  -webkit-appearance: none;
+}
+
+
+/* common css */
+/*在CSS中，通过对某一样式声明! important ，可以更改默认的CSS样式优先级规则，使该条样式属性声明具有最高优先级，也就是相当于写在最下面。*/
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  line-height: 0;
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+
+.w50{
+  width: 50%;
+}
+
+.bl{
+  border-left: 1px solid #ccc;
+}
+.bt{
+  border-top: 1px solid #ccc;
+}
+.bb{
+  border-bottom: 1px solid #ccc;
+}
+.br{
+  border-right: 1px solid #ccc;
+}

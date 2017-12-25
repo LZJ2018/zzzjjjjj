@@ -1,0 +1,254 @@
+@import 'base.less';
+
+//主体背景
+
+#layout {
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+  //height: 2000px;
+  background-color: skyblue;
+}
+
+//topbar 顶部通栏
+#topbar {
+  z-index: 999;
+  position: fixed;
+  //fixed    w100%
+  width: 100%;
+  //要有固定宽度
+  max-width: 640px;
+
+  .icon-logo {
+    width: 58px;
+    height: 23px;
+    background-image: url("../images/sprites.png");
+    background-size: 200px 200px;
+    background-position: 0 -109px;
+    position: absolute;
+    left: 10px;
+    top: 8px;
+  }
+  form {
+    //设置左右距离   再中间来个吧100%
+    //特别注意   因为div是靠内容撑开盒子的 所以要将里面input内容设置100%
+    margin-left: 80px;
+    margin-right: 50px;
+    .icon-search {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 5px;
+      right: 68px;
+      background-image: url("../images/sprites.png");
+      background-position: -58px -109px;
+      background-size: 200px 200px;
+    }
+    > input {
+      height: 30px;
+      width: 100%;
+      border-radius: 16px;
+      padding-left: 30px;
+    }
+  }
+  .login {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    color: #fff;
+    margin-right: 10px;
+  }
+}
+
+// 轮播图
+#slide {
+  overflow: hidden;
+  position: relative;
+  > ul {
+    //10张图片1000%
+    //background-color: white;
+    width: 1000%;
+    //    height: 100%;
+    > li {
+      //       height: 100%;
+      float: left;
+      width: 10%;
+      > a {
+        display: block;
+        > img {
+          width: 100%;
+        }
+      }
+    }
+    // 使用百分比来确认位置的话就用百分比
+    transform: translateX(-10%);
+  }
+  > ol {
+    //外层确定位置 内层则控制小圆的样式
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 10px;
+    > li {
+      width: 6px;
+      height: 6px;
+      float: left;
+      border-radius: 50%;
+      border: 1px solid white;
+      margin-left: 10px;
+      &.active {
+        background-color: white;
+      }
+    }
+  }
+}
+
+// 导航栏
+#nav {
+  padding: 10px;
+  background-color: #fff;
+  > ul {
+    > li {
+      float: left;
+      width: 25%;
+      > a {
+        display: block;
+        text-align: center;
+        > img {
+          width: 40px;
+        }
+        > p {
+          font-size: 12px;
+          margin: 5px auto;
+        }
+      }
+    }
+  }
+}
+
+//秒杀
+#seckill {
+  background-color: #fff;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  > .seckill-heading {
+    font-size: 12px;
+    //设置一个需求的高度   不一定需要一比一  只需要一个高度 >=就行
+    line-height: 30px;
+    > .icon-clock {
+      width: 20px;
+      height: 25px;
+      background-image: url("../images/seckill-icon.png");
+      background-size: 20px 25px;
+      float: left;
+    }
+    > .seckill-name {
+      float: left;
+      margin-left: 5px;
+      color: @main-color;
+    }
+    > .seckill-count-down {
+      float: left;
+      margin-left: 5px;
+    }
+    > span {
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      text-align: center;
+      line-height: 15px;
+      background-color: #000;
+      color: #fff;
+      &:nth-child(3n) {
+        background-color: #fff;
+        color: #000;
+      }
+    }
+    > .seckill-more {
+      float: right;
+      margin-right: 5px;
+    }
+  }
+  > .seckill-body {
+    > ul {
+      > li {
+        float: left;
+        //li  设置基本占比  和导航栏目一样  外盒子加
+        width: 33.3333%;
+        > a {
+          display: block;
+          text-align: center;
+          > img {
+            //里面图片可以按照需求百分比  或者宽高
+
+            width: 60%;
+          }
+          > p {
+            color: @main-color;
+          }
+          > del {
+
+            font-size: 12px;
+          }
+        }
+        & + li {
+          border-left: 1px solid #ccc;
+        }
+      }
+    }
+  }
+}
+
+//京东超市
+#shopping {
+
+  .jd-market {
+    background-color: #ffffff;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    //height: 370px;
+    //width: 640px;
+    //width: 100%;
+    .jd-market-heading {
+      > h4 {
+        line-height: 30px;
+        padding-left: 20px;
+        position: relative;
+        &::before {
+          content: "";
+          width: 4px;
+          height: 15px;
+          background-color: @main-color;
+          position: absolute;
+          left: 10px;
+          top: 7px;
+        }
+      }
+    }
+    //.jd-market-body {
+    //  >div{
+    //    >a{
+    //      display: block;
+    //    }
+    //    >img{
+    //      width: 100%;
+    //    }
+    //  }
+    //}
+
+    //标签的嵌套呀!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    .jd-market-body{
+      >div{
+        >a{
+          display: block;
+          >img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
